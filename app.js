@@ -19,8 +19,6 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
 
-        document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
-
         if(dice !== 1){
             roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
@@ -38,7 +36,6 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
         roundScore = 0;
 
-
         if(scores[activePlayer] >= 50){
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!!';
             document.querySelector('.dice').style.display = 'none';
@@ -55,6 +52,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
 // restart game
 document.querySelector('.btn-new').addEventListener('click', init);
+
 
 // initialize this game
 function init() {
